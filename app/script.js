@@ -21,6 +21,7 @@ function send(){
 			for (let i = 0; i < 6; i++) {
 				let node = document.getElementById(i);
 				node.innerHTML = getDate(data, i) + ":<br>" + "T: " + getTemp(data, i) + "&#8451;";
+				document.getElementById(i+6).innerHTML = '';
 				getIcon(data, i, document.getElementById(i+6));
 			}
 		});
