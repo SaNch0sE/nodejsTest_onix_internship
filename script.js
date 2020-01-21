@@ -55,6 +55,8 @@ const requestListener = (req, res) => {
 		sendFile(req, res, serverOptions.appPath + req.url.substr(1), 'text/html')
 	} else if (req.url === "/ajax.js" || req.url === "/script.js") {
 		sendFile(req, res, serverOptions.appPath + req.url.substr(1), 'text/javascript')
+	} else {
+		sendFile(req, res, 'index.html', 'text/html')
 	}
 }
 const server = http.createServer(requestListener);
