@@ -1,44 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>OpenWeatherApi Forecast</title>
+	<title>OpenWeadiverApi Forecast</title>
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
 	<script type="text/javascript" src="ajax.js"></script>
 	<script type="text/javascript" src="script.js"></script>
 </head>
 <body>
-	<h3>Enter city:</h3>
-	<input type="text" id="city">
-	<button onclick="send()">Click</button>
-	<table id="t">
-		<tbody>
-			<tr>
-			    <th id="0"></th>
-			    <th id="1"></th>
-			    <th id="2"></th>
-			    <th id="3"></th>
-			    <th id="4"></th>
-			    <th id="5"></th>
-			</tr>
-			<tr>
-			    <td id="6"></td>
-			    <td id="7"></td>
-			    <td id="8"></td>
-			    <td id="9"></td>
-			    <td id="10"></td>
-			    <td id="11"></td>
-			</tr>
-		</tbody>
-	</table>
+	<header>
+		<h1>Enter city:</h1>
+		<input type="text" id="city">
+		<button onclick="send()">Click</button>
+	</header>
+	<section id="view"></section>
 	<style type="text/css">
-		body {background-color: #5891bd;}
-		table {
-			display: block;
-			width: 100vw;
+		body {
+			background-color: #995db5;
+			font-family: "Open Sans";
+			font-style: normal;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 		}
-		th, td {
-			border: solid;
-			padding-left: 5px;
-			padding-right: 5px 
+		header {
+			background-color: #a178b5;
+			color: #fff5ee;
+			border-radius: 10px;
+			display: inline-flex;
+			flex-direction: row;
+			align-items: center;
+			padding: 8px;
+		}
+		input {
+			background-color: #995db5;
+			border: none;
+			border-bottom: 3px solid #794a90;
+			border-top-left-radius: 6px; 
+			border-top-right-radius: 6px;
+			font-size: 32px;
+			color: #fff5ee;
+			margin-left: 10px;
+		}
+		button {
+			display: flex;
+			font-size: 28px;
+			margin-left: 5px;
+			border: 4px solid #f9af57;
+			border-radius: 6px;
+			background-color: #f7941f;
+		}
+		#view {
+			font-size: 24px;
+			margin-top: 10px;
+			display: inline-flex;
+			justify-content: space-evenly;
+			flex-wrap: wrap;
+		}
+		div {
+			margin: 10px;
+			border: 8px solid #f9af57;
+			border-radius: 10px;
+			background-color: #f7a03a;
+			display: inline-flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			width: 160px;
+		}
+		span {
+			padding: 5px;
 		}
 		img {
 			margin: 0 0 0 0;
