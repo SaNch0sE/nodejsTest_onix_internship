@@ -19,7 +19,7 @@ function send() {
 		ajax("sendCity", city, (data) => {
 			let parent = document.getElementById('view');
 			parent.innerHTML = '';
-			for (let i = 0; i < 6; i++) {
+			for (let i = 0; i < 5; i++) {
 				let node = document.createElement('DIV');
 				let child = document.createElement('p');
 				child.innerHTML = "<span>" + getDate(data, i) + "</span><br>" + "T: " + Math.round(getTemp(data, i)) + "&#8451;";

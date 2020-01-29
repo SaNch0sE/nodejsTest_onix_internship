@@ -37,12 +37,18 @@ const requestListener = (req, res) => {
 			    .then((json) => {
 			    	if(json){
 			    		let weather = [];
-						let dn = parseInt(new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '').substring(8, 10));
+			    		let date = new Date();
+			    		let dn = date.getDate();
+			    		console.log(dn);
+			    		let days = new Date(date.getYear(), date.getMonth(), 0).getDate();
 						let i = 0;
 						json['list'].forEach((n)=>{
 							if (dn == json['list'][i]['dt_txt'].substring(8, 10)) {
 								weather.push({n});
 								dn = dn+1;
+							} else if(dn >= days) {
+								dn = 1;
+								i = i-1;
 							}
 							i = i+1;
 						});
